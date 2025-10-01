@@ -14,7 +14,7 @@ print("End-effector transformation matrix:")
 print(H)
 
 
-# Definir variables simbólicas para un robot planar de 2 grados de libertad
+# Definir variables simbólicas para un robot planar de 2 grados de libertad.
 th1, th2 = sp.symbols('th1 th2')
 a1, a2 = sp.symbols('a1 a2')
 
