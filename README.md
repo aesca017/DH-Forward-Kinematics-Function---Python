@@ -1,70 +1,33 @@
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) 
-# DH Forward Kinematics Python
+# Introducción
 
-This project provides tools to compute the forward kinematics of serial robotic manipulators using Denavit-Hartenberg (DH) parameters. It supports both numerical and symbolic calculations, making it useful for both simulation and analytical studies.
+Este proyecto implementa la cinemática directa de robots articualdos utilizando el método de Denavit-Hartenberg (DH) en Python. El objetivo es proporcionar herramientas simbólicas para analizar y simular la posición y orientación del efector final de diferentes robots, facilitando el estudio y la enseñanza de la robótica industrial.
 
-## Features
-- Compute forward kinematics numerically using NumPy
-- Compute forward kinematics symbolically using SymPy
-- Unified class interface for both calculation types
-- Example scripts for quick testing
+# Metodología
 
-## File Structure
-- `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
-- `forward_kinematics_dh_symbolic.py`: Symbolic DH forward kinematics functions (SymPy)
-- `forward_kinematics_dh_class.py`: Unified class with both numeric and symbolic methods
-- `example.py`: Example usage of numeric and symbolic functions (separate functions)
-- `example2.py`: Example usage of the unified class for both numeric and symbolic calculations
+La cinemática directa se implementó mediante la parametrización DH, que permite describir la geometría de cada eslabón y articulación de un robot a través de cuatro parámetros: $\theta$, $d$, $a$, y $\alpha$. El proyecto Se desarrolló a partir de la clase `ForwardKinematicsDH` que ofrece métodos para calcular la matriz homogénea de transformación de manera numérica (usando NumPy) y simbólica (usando SymPy).
 
-## How to Use
-1. **Clone the repository**
-   ```sh
-   git clone <your-repo-url>
-   cd dh_forward_kinematics_python
-   ```
-2. **Install dependencies**
-   This project requires `numpy` and `sympy`. Install them with:
-   ```sh
-   pip install numpy sympy
-   ```
-3. **Run examples**
-   - For basic function usage:
-     ```sh
-     python example.py
-     ```
-   - For class-based usage:
-     ```sh
-     python example2.py
-     ```
+El archivo `Matrix_calculus.py` ejemplifica el uso de la clase `ForwardKinematicsDH` para calcular la cinemática directa de diferentes robots: un robot planar RR, un robot antropomórfico RRR y un robot SCARA RRP. En este archivo se definen las tablas DH para cada robot y se obtiene la matriz homogénea simbólica correspondiente, mostrando la versatilidad de la implementación.
 
-## How It Works
-- **Numeric calculation:**
-  - Provide a list of DH parameters (theta, d, a, alpha) for each joint as numbers.
-  - The code computes the transformation matrix using NumPy.
-- **Symbolic calculation:**
-  - Provide DH parameters as SymPy symbols or expressions.
-  - The code computes the transformation matrix symbolically, allowing for analytical manipulation.
-- **Unified class:**
-  - The `ForwardKinematicsDH` class provides both `numeric()` and `symbolic()` static methods for easy switching between calculation types.
+Se analizaron los siguientes robots:
 
-## Example
-```
-from forward_kinematics_dh_class import ForwardKinematicsDH
-import numpy as np
-import sympy as sp
+- **Robot Planar RR**: Dos articulaciones rotacionales en el plano.
+- **Robot Antropomórfico RRR**: Tres articulaciones rotacionales, común en brazos robóticos industriales.
+- **Robot SCARA (RRP)**: Dos articulaciones rotacionales y una prismática, típico en aplicaciones pick-and-place.
 
-# Numeric
-dh_params = [[np.pi/4, 0, 1, 0], [np.pi/4, 0, 1, 0]]
-H = ForwardKinematicsDH.numeric(dh_params)
-print(H)
+# Resultados
 
-# Symbolic
-th1, th2 = sp.symbols('th1 th2')
-a1, a2 = sp.symbols('a1 a2')
-dh_params_sym = [[th1, 0, a1, 0], [th2, 0, a2, 0]]
-H_sym = ForwardKinematicsDH.symbolic(dh_params_sym)
-sp.pprint(H_sym)
+Los resultados obtenidos incluyen las matrices homogéneas de transformación para cada robot, tanto en forma simbólica como numérica. Esto permite comparar los resultados teóricos con simulaciones y validar la correcta implementación de la metodología DH. Además, se observó que la elección de los parámetros DH y la asignación de los sistemas de referencia influyen directamente en la forma final de la matriz de transformación.
+
+Ejemplo de salida simbólica para el robot SCARA (RRP):
+
+```python
+Matriz homogénea RRP:
+⎡-sin(q₁ + q₂)  cos(q₁ + q₂)   0   l₁⋅cos(q₁) + l₂⋅cos(q₁ + q₂)⎤
+⎢ cos(q₁ + q₂)  sin(q₁ + q₂)   0   l₁⋅sin(q₁) + l₂⋅sin(q₁ + q₂)⎥
+⎢      0              0        -1             -d₃               ⎥
+⎣      0              0         0              1                ⎦
 ```
 
-## License
-MIT
+# Relación entre `Matrix_calculus.py` y `forward_kinematics_dh_class.py`
+
+El archivo `Matrix_calculus.py` utiliza la clase `ForwardKinematicsDH` definida en `forward_kinematics_dh_class.py` para calcular de manera simbólica la cinemática directa de diferentes robots. Mientras que `forward_kinematics_dh_class.py` contiene la lógica y métodos generales para el cálculo de matrices DH, `Matrix_calculus.py` sirve como ejemplo y prueba de su uso, mostrando cómo definir tablas DH para distintos robots y obtener sus matrices homogéneas de transformación.
