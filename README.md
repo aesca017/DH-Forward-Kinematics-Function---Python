@@ -10,23 +10,14 @@ El archivo `Matrix_calculus.py` ejemplifica el uso de la clase `ForwardKinematic
 
 Se analizaron los siguientes robots:
 
-- **Robot Planar RR**: Dos articulaciones rotacionales en el plano.
-<figure>
-    <img src="img/RR.webp" width="200" alt="Robot Planar RR"/>
-    <img src="img/RR_esq.png" width="200" alt="Esquema Robot Planar RR"/>
-</figure>
+- **Robot Planar RR**: Dos articulaciones rotacionales en el plano.<br>
+<img src="img/RR.webp" width="200" alt="Robot Planar RR"/> <img src="img/RR_esq.png" width="200" alt="Esquema Robot Planar RR"/>
 
-- **Robot Antropomórfico RRR**: Tres articulaciones rotacionales, común en brazos robóticos industriales.
-<figure>
-    <img src="img/RRR.jpg" width="200" alt="Robot Antropomórfico RRR"/>
-    <img src="img/RR_esq.png" width="200" alt="Esquema Robot Antropomórfico RRR"/>
-</figure>
+- **Robot Antropomórfico RRR**: Tres articulaciones rotacionales, común en brazos robóticos industriales.<br>
+<img src="img/RRR.jpg" width="200" alt="Robot Antropomórfico RRR"/> <img src="img/RR_esq.png" width="200" alt="Esquema Robot Antropomórfico RRR"/>
 
-- **Robot SCARA (RRP)**: Dos articulaciones rotacionales y una prismática, típico en aplicaciones pick-and-place.
-<figure>
-    <img src="img/SCARA.jpg" width="200" alt="Robot SCARA"/>
-    <img src="img/SCARA_esq.png" width="200" alt="Esquema Robot SCARA"/>
-</figure>
+- **Robot SCARA (RRP)**: Dos articulaciones rotacionales y una prismática, típico en aplicaciones pick-and-place.<br>
+<img src="img/SCARA.jpg" width="200" alt="Robot SCARA"/> <img src="img/SCARA_esq.png" width="200" alt="Esquema Robot SCARA"/>
 
 
 # Resultados
