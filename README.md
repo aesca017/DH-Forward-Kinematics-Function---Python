@@ -11,8 +11,13 @@ El archivo `Matrix_calculus.py` ejemplifica el uso de la clase `ForwardKinematic
 Se analizaron los siguientes robots:
 
 - **Robot Planar RR**: Dos articulaciones rotacionales en el plano.
+<img src="img/RR.webp" width="200"/> <img src="img/RR_esq.png" width="200"/>
+
 - **Robot Antropomórfico RRR**: Tres articulaciones rotacionales, común en brazos robóticos industriales.
+<img src="img/RRR.jpg" width="200"/> <img src="img/RR_esq.png" width="200"/>
+
 - **Robot SCARA (RRP)**: Dos articulaciones rotacionales y una prismática, típico en aplicaciones pick-and-place.
+<img src="img/SCARA.jpg" width="200"/> <img src="img/SCARA_esq.png" width="200"/>
 
 # Resultados
 
