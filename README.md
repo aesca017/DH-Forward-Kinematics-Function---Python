@@ -14,7 +14,7 @@ Se analizaron los siguientes robots:
 <img src="img/RR.webp" width="200" alt="Robot Planar RR"/> <img src="img/RR_esq.png" width="200" alt="Esquema Robot Planar RR"/>
 
 - **Robot Antropomórfico RRR**: Tres articulaciones rotacionales, común en brazos robóticos industriales.<br>
-<img src="img/RRR.jpg" width="200" alt="Robot Antropomórfico RRR"/> <img src="img/RR_esq.png" width="200" alt="Esquema Robot Antropomórfico RRR"/>
+<img src="img/RRR.jpg" width="200" alt="Robot Antropomórfico RRR"/> <img src="img/RRR_esq.png" width="200" alt="Esquema Robot Antropomórfico RRR"/>
 
 - **Robot SCARA (RRP)**: Dos articulaciones rotacionales y una prismática, típico en aplicaciones pick-and-place.<br>
 <img src="img/SCARA.jpg" width="200" alt="Robot SCARA"/> <img src="img/SCARA_esq.png" width="200" alt="Esquema Robot SCARA"/>
