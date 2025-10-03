@@ -25,10 +25,13 @@ Se analizaron los siguientes robots:
 Los resultados obtenidos incluyen las matrices homogéneas de transformación para cada robot, en forma simbólica. Además, se observó que la elección de los parámetros DH y la asignación de los sistemas de referencia influyen directamente en la forma final de la matriz de transformación.
 
 - **Robot Planar RR**
+
 ![](img/Mat_RR.png)
 
 - **Robot Antropomórfico RRR**
+
 ![](img/Mat_RRR.png)
 
 - **Robot SCARA (RRP)**
+
 ![](img/Mat_SCARA.png)
