@@ -11,28 +11,33 @@ El archivo `Matrix_calculus.py` ejemplifica el uso de la clase `ForwardKinematic
 Se analizaron los siguientes robots:
 
 - **Robot Planar RR**: Dos articulaciones rotacionales en el plano.
-<img src="img/RR.webp" width="200"/> <img src="img/RR_esq.png" width="200"/>
+<figure>
+    <img src="img/RR.webp" width="200" alt="Robot Planar RR"/>
+    <img src="img/RR_esq.png" width="200" alt="Esquema Robot Planar RR"/>
+</figure>
 
 - **Robot Antropomórfico RRR**: Tres articulaciones rotacionales, común en brazos robóticos industriales.
-<img src="img/RRR.jpg" width="200"/> <img src="img/RR_esq.png" width="200"/>
+<figure>
+    <img src="img/RRR.jpg" width="200" alt="Robot Antropomórfico RRR"/>
+    <img src="img/RR_esq.png" width="200" alt="Esquema Robot Antropomórfico RRR"/>
+</figure>
 
 - **Robot SCARA (RRP)**: Dos articulaciones rotacionales y una prismática, típico en aplicaciones pick-and-place.
-<img src="img/SCARA.jpg" width="200"/> <img src="img/SCARA_esq.png" width="200"/>
+<figure>
+    <img src="img/SCARA.jpg" width="200" alt="Robot SCARA"/>
+    <img src="img/SCARA_esq.png" width="200" alt="Esquema Robot SCARA"/>
+</figure>
+
 
 # Resultados
 
-Los resultados obtenidos incluyen las matrices homogéneas de transformación para cada robot, tanto en forma simbólica como numérica. Esto permite comparar los resultados teóricos con simulaciones y validar la correcta implementación de la metodología DH. Además, se observó que la elección de los parámetros DH y la asignación de los sistemas de referencia influyen directamente en la forma final de la matriz de transformación.
+Los resultados obtenidos incluyen las matrices homogéneas de transformación para cada robot, en forma simbólica. Además, se observó que la elección de los parámetros DH y la asignación de los sistemas de referencia influyen directamente en la forma final de la matriz de transformación.
 
-Ejemplo de salida simbólica para el robot SCARA (RRP):
+- **Robot Planar RR**
+![](img/Mat_RR.png)
 
-```python
-Matriz homogénea RRP:
-⎡-sin(q₁ + q₂)  cos(q₁ + q₂)   0   l₁⋅cos(q₁) + l₂⋅cos(q₁ + q₂)⎤
-⎢ cos(q₁ + q₂)  sin(q₁ + q₂)   0   l₁⋅sin(q₁) + l₂⋅sin(q₁ + q₂)⎥
-⎢      0              0        -1             -d₃               ⎥
-⎣      0              0         0              1                ⎦
-```
+- **Robot Antropomórfico RRR**
+![](img/Mat_RRR.png)
 
-# Relación entre `Matrix_calculus.py` y `forward_kinematics_dh_class.py`
-
-El archivo `Matrix_calculus.py` utiliza la clase `ForwardKinematicsDH` definida en `forward_kinematics_dh_class.py` para calcular de manera simbólica la cinemática directa de diferentes robots. Mientras que `forward_kinematics_dh_class.py` contiene la lógica y métodos generales para el cálculo de matrices DH, `Matrix_calculus.py` sirve como ejemplo y prueba de su uso, mostrando cómo definir tablas DH para distintos robots y obtener sus matrices homogéneas de transformación.
+- **Robot SCARA (RRP)**
+![](img/Mat_SCARA.png)
